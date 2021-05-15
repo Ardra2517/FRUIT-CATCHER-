@@ -55,17 +55,16 @@ class Game{
             players[index - 1].y = y;
 
             if(index === player.index){   
-                fill("white");
+                fill("black");
                 textSize(25);
                 text(allPlayers[plr].name ,x-25,y+25); 
             }
            
             // Add code to diplay the scores of both 
-            textSize(25);
-            fill("white");
-            text("Player 1: " + allPlayers.player1.score,50,50);
-            text("Player 2: " + allPlayers.player2.score,50,100);
             // the players on the screen
+
+
+
         }
 
         if (keyIsDown(RIGHT_ARROW) && player.index !== null) {
@@ -94,23 +93,23 @@ class Game{
                 break;
             }
             fruitGroup.add(fruits);
+            
         }
 
         // Add code to destroy fruits, calculate scores and
         // update the scores to the database
-        if (player.index !== null){
-            for (var i= 0; i < fruitGroup.length; i++){
-                if (fruitGroup.get(i).isTouching(players)){
-                    fruitGroup.get(i).destroy();
-                    player.score=player.score+1;
-                    player.update();
-                }
-            }
-        }
+
+
+        // Add code for game end condition
+
 
     }
 
-    // end(){
-    //    // Add code to update game state and display Game Over
-    // }
+    end(){
+
+       // Add code to update game state and display Game Over
+
+
+       
+    }
 }
